@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>007 ボンド流 会話訓練</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;background:#f5f4f0;color:#1a1a18;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:1rem}
+.wrap{width:100%;max-width:640px}
+
+/* API KEY SCREEN */
+.key-screen{padding:2rem 1.5rem;background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;margin-top:2rem}
+.key-ey{font-size:10px;letter-spacing:.14em;color:#888;text-transform:uppercase;margin-bottom:8px}
+.key-h1{font-size:20px;font-weight:500;margin-bottom:6px}
+.key-sub{font-size:13px;color:#666;line-height:1.7;margin-bottom:1.25rem}
+.key-sub a{color:#185FA5;text-decoration:none}
+.key-sub a:hover{text-decoration:underline}
+.key-inp{width:100%;padding:9px 12px;border-radius:8px;border:0.5px solid #bbb;font-size:14px;font-family:monospace;outline:none;margin-bottom:8px;background:#fafafa}
+.key-inp:focus{border-color:#888}
+.key-note{font-size:12px;color:#999;margin-bottom:1rem;line-height:1.6}
+.key-btn{width:100%;padding:10px;border-radius:8px;border:0.5px solid #bbb;background:#fff;font-size:14px;font-weight:500;cursor:pointer;transition:background .1s}
+.key-btn:hover{background:#f0efeb}
+
+/* HOME */
+.home{padding:1.5rem 1rem 1rem;background:#fff;border-radius:12px;border:0.5px solid #d4d2c8}
+.ey{font-size:10px;letter-spacing:.14em;color:#999;text-transform:uppercase;margin-bottom:6px}
+.h1{font-size:22px;font-weight:500;margin-bottom:4px}
+.hsub{font-size:14px;color:#666;line-height:1.7;margin-bottom:1.25rem}
+.sl{font-size:10px;font-weight:500;color:#999;letter-spacing:.1em;text-transform:uppercase;margin:1.25rem 0 6px}
+.ml{display:flex;flex-direction:column;gap:7px}
+.mc{display:flex;align-items:center;gap:10px;padding:11px 13px;background:#fff;border:0.5px solid #ccc;border-radius:10px;cursor:pointer;text-align:left;width:100%;transition:background .1s}
+.mc:hover{background:#f5f4f0}
+.mcb{flex:1}
+.mct{font-size:14px;font-weight:500}
+.mcd{font-size:12px;color:#777;margin-top:2px}
+.arr{font-size:14px;color:#bbb}
+.bdg{font-size:10px;font-weight:500;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.b0{background:#e6f1fb;color:#185FA5}
+.b1{background:#eaf3de;color:#3B6D11}
+.b2{background:#faeeda;color:#BA7517}
+.b3{background:#fcebeb;color:#A32D2D}
+.pbox{margin-top:1.5rem;padding:11px 13px;background:#f5f4f0;border:0.5px solid #ddd;border-radius:8px;font-size:12px;color:#777;line-height:1.9}
+.pbox strong{font-weight:500;color:#333}
+
+/* TRAINING */
+.train{background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;display:flex;flex-direction:column;min-height:680px}
+.th{display:flex;align-items:center;justify-content:space-between;padding:10px 13px;border-bottom:0.5px solid #e8e6e0;flex-shrink:0}
+.thl{display:flex;align-items:center;gap:7px}
+.tht{font-size:13px;font-weight:500}
+.bk{font-size:12px;color:#888;background:none;border:none;cursor:pointer;padding:4px 6px}
+.bk:hover{color:#333}
+.msgs{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:11px;max-height:480px}
+.mr{display:flex}
+.mr.u{justify-content:flex-end}
+.bl{max-width:90%;border-radius:10px;padding:9px 13px;font-size:14px;line-height:1.75}
+.bl.q{background:#f5f4f0;border:0.5px solid #e0ded8;border-radius:0 10px 10px 10px}
+.bl.w{background:#e6f1fb;border:0.5px solid #b5d4f4;border-radius:0 10px 10px 10px}
+.bl.me{background:#fff;border:0.5px solid #ccc;border-radius:10px 0 10px 10px}
+.bf{font-size:10px;font-weight:500;letter-spacing:.06em;color:#aaa;margin-bottom:5px}
+.bfw{color:#185FA5}
+.sbdg{display:inline-block;font-size:12px;font-weight:500;border-radius:6px;padding:3px 9px;margin-bottom:7px}
+.shi{background:#e6f1fb;color:#185FA5}
+.smd{background:#eaf3de;color:#3B6D11}
+.slo{background:#faeeda;color:#BA7517}
+.sbd{background:#fcebeb;color:#A32D2D}
+.ld{font-size:13px;color:#aaa;padding:4px 0}
+.abar{padding:8px 13px;border-top:0.5px solid #e8e6e0;display:flex;flex-direction:column;gap:7px;flex-shrink:0}
+.albl{font-size:11px;color:#aaa}
+.dr{display:flex;gap:6px;flex-wrap:wrap}
+.dbtn{display:flex;align-items:center;gap:6px;padding:6px 11px;background:#fff;border:0.5px solid #ccc;border-radius:7px;font-size:13px;cursor:pointer;transition:background .1s}
+.dbtn:hover{background:#f5f4f0}
+.dl{font-size:10px;font-weight:500;color:#888;background:#f0efeb;padding:1px 5px;border-radius:4px}
+.dt{font-size:13px}
+.er{display:flex;gap:6px;flex-wrap:wrap}
+.ec{padding:6px 11px;background:#f5f4f0;border:0.5px solid #ddd;border-radius:7px;font-size:13px;cursor:pointer;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ec:hover{background:#fff;border-color:#bbb}
+.scbtn{padding:5px 12px;background:none;border:0.5px solid #ccc;border-radius:7px;font-size:12px;color:#888;cursor:pointer}
+.scbtn:hover{color:#333}
+.ir{border-top:0.5px solid #e8e6e0;padding:9px 13px;display:flex;gap:8px;flex-shrink:0}
+.rta{flex:1;resize:none;font-size:14px;line-height:1.5;padding:7px 11px;border-radius:7px;border:0.5px solid #ccc;background:#fff;color:#1a1a18;font-family:inherit;outline:none}
+.rta:focus{border-color:#888}
+.rta:disabled{opacity:.4;background:#f5f4f0}
+.sb{padding:7px 14px;border-radius:7px;border:0.5px solid #ccc;background:#fff;font-size:14px;font-weight:500;cursor:pointer;align-self:flex-end;white-space:nowrap}
+.sb:hover{background:#f5f4f0}
+.sb:disabled{opacity:.35;cursor:not-allowed}
+.hb{padding:5px 10px;border-radius:7px;border:0.5px solid #ddd;background:#f5f4f0;font-size:12px;color:#888;cursor:pointer;white-space:nowrap}
+.hb:hover{color:#333;background:#eee}
+.hb:disabled{opacity:.35;cursor:not-allowed}
+.key-change{font-size:11px;color:#bbb;background:none;border:none;cursor:pointer;padding:2px 4px;margin-left:4px}
+.key-change:hover{color:#888}
+
+@media(prefers-color-scheme:dark){
+  body{background:#1c1c1a;color:#e8e6e0}
+  .key-screen,.home,.train{background:#252522;border-color:#3a3836}
+  .mc{background:#252522;border-color:#3a3836}
+  .mc:hover,.mc:hover{background:#2e2e2b}
+  .pbox{background:#1c1c1a;border-color:#3a3836;color:#aaa}
+  .pbox strong{color:#e8e6e0}
+  .bl.q{background:#2e2e2b;border-color:#3a3836}
+  .bl.me{background:#252522;border-color:#3a3836}
+  .bl.w{background:#0c447c33;border-color:#185FA5}
+  .dbtn{background:#252522;border-color:#3a3836}
+  .dbtn:hover{background:#2e2e2b}
+  .dl{background:#1c1c1a;color:#888}
+  .ec{background:#2e2e2b;border-color:#3a3836}
+  .ec:hover{background:#252522;border-color:#555}
+  .key-inp{background:#1c1c1a;border-color:#555;color:#e8e6e0}
+  .key-btn{background:#252522;border-color:#555;color:#e8e6e0}
+  .key-btn:hover{background:#2e2e2b}
+  .rta{background:#252522;border-color:#555;color:#e8e6e0}
+  .rta:disabled{background:#1c1c1a}
+  .sb{background:#252522;border-color:#555;color:#e8e6e0}
+  .sb:hover{background:#2e2e2b}
+  .ir{border-color:#3a3836}
+  .th{border-color:#3a3836}
+  .msgs{border-color:#3a3836}
+  .abar{border-color:#3a3836}
+  .shi{background:#0c447c55;color:#85B7EB}
+  .smd{background:#27500a44;color:#97C459}
+  .slo{background:#63380644;color:#EF9F27}
+  .sbd{background:#791f1f44;color:#F09595}
+  .b0{background:#0c447c44;color:#85B7EB}
+  .b1{background:#27500a44;color:#97C459}
+  .b2{background:#63380644;color:#EF9F27}
+  .b3{background:#791f1f44;color:#F09595}
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+const SP={
+normal:`あなたは「ジェームズ・ボンド（007）流・会話トレーニング」の専属コーチ「Q」です。
+知的で少し皮肉屋、ユーザーの成長を楽しんでいるトーンで日本語で話してください。
+
+ボンド流・会話の5大原則：
+1. 謝らない・媚びない：堂々とした態度を崩さない
+2. 言い訳しない：ユーモアやウィットで返す
+3. 短く、鋭く：一言（5秒以内）で相手の心を掴む
+4. 主導権を握る：自分のペース（土俵）に引き込む
+5. リフレーミング：ネガティブな状況をポジティブな「物語」に書き換える
+
+採点フォーマット（必ず守ること）：
+ユーザーが切り返しを回答したら：
+
+【ボンド度：XX点 / 100点】
+
+評価：[ボンドの思考回路で2〜3文の解説]
+
+もしボンドなら：「[一言の模範解答]」
+
+────────────────
+📍 [次のシチュエーション一文]
+💬 「[女性のセリフ]」
+
+モード：
+- モード1（ランダム）：日常会話、褒め言葉、軽い挑発。バリエーション豊富に。
+- モード2（制約付き）：縛りルール（謝罪禁止・Yes/No禁止など）を【縛り：〇〇禁止】の形で毎回冒頭に明示。
+- モード3（誘い）：デートへの誘い、クロージング。難易度高め。
+最初のシナリオは採点なしで即座に📍と💬だけで出題してください。`,
+
+easy:`あなたは「ジェームズ・ボンド（007）流・会話トレーニング」の専属コーチ「Q」です（初心者サポートモード）。
+日本語で話してください。
+ボンド流の5原則：謝らない・言い訳しない・短く鋭く・主導権を握る・リフレーミング
+
+シナリオ提示フォーマット（最初と採点後の次回に厳守）：
+📍 [シチュエーション一文]
+💬 「[女性のセリフ]」
+
+【方向性ヒント】
+A｜[方向性ラベル]：[一文の説明]
+B｜[方向性ラベル]：[一文の説明]
+C｜[方向性ラベル]：[一文の説明]
+
+方向性選択後のフォーマット（ユーザーが「方向性X（ラベル）を選びます。」と送ってきたとき）：
+その方向性の例：
+1｜[例文（ボンド流・短め）]
+2｜[例文（ボンド流・別アプローチ）]
+3｜[例文（ボンド流・さらに別）]
+そのままでもアレンジしてもOKです。
+
+採点フォーマット（ユーザーが実際の返しを送ってきたとき）：
+【ボンド度：XX点 / 100点】
+
+評価：[2〜3文の解説]
+
+もしボンドなら：「[模範解答]」
+
+────────────────
+[次のシナリオをシナリオ提示フォーマット通りに出力]
+
+最初のシナリオは採点なしで即座に出題してください（方向性ヒントは必ずつけること）。`,
+
+man:`あなたは「ジェームズ・ボンド（007）流・声かけ訓練」の専属コーチ「Q」と女性役「彩（あや）」の両方を演じます。日本語で話してください。
+
+流れ：
+1. Qコーチとして場面（場所・女性の状況）を設定し「では声をかけてみてください。」と言う
+2. ユーザーが声をかけてきたら、彩として反応する（必ず「彩：」から始める）
+3. 3回やりとりしたら（またはユーザーが「採点して」「採点してください」と言ったら）Qコーチに戻って採点する
+
+彩のキャラクター：
+- 最初は少しクールで警戒気味（でも礼儀正しい）
+- 面白い・意外な返しには少し興味を示す
+- ありきたりな返しには無関心気味
+- 返答は自然な日本語で1〜2文・短め
+- 必ず「彩：」から始める
+
+採点フォーマット（3往復後またはユーザーの「採点して」指示で）：
+【ボンド度：XX点 / 100点】
+
+やりとりの評価：
+・最初の一言：[評価]
+・2回目の返し：[評価]（なければ省略）
+・3回目の返し：[評価]（なければ省略）
+
+総評：[2〜3文]
+
+もしボンドなら（最初の一言）：「[模範解答]」
+
+────────────────
+次のシナリオに挑戦しますか？「次へ」と送ってください。
+
+重要：女性として返答するときは必ず「彩：」から始め、Qコーチとしての解説は一切しない。「次へ」と言われたら新しいシチュエーションを設定して再開する。`
+};
+
+const MODES=[
+  {id:4,type:'easy',  title:'かんたんモード',       desc:'方向性ヒント＋例文サポート付き',   badge:'入門',bc:'b0',g:'w',init:'かんたんモード（入門）でトレーニング開始。最初のシナリオを出題してください。'},
+  {id:1,type:'normal',title:'ランダム・スパーリング', desc:'日常会話・褒め言葉への切り返し',   badge:'基礎',bc:'b1',g:'w',init:'モード1（ランダム・スパーリング）でトレーニング開始。最初のシナリオを出題してください。'},
+  {id:2,type:'normal',title:'制約付きスパーリング',  desc:'謝罪禁止・Yes/No禁止などの縛り',  badge:'応用',bc:'b2',g:'w',init:'モード2（制約付きスパーリング）でトレーニング開始。最初のシナリオを出題してください。'},
+  {id:3,type:'normal',title:'誘い・クロージング',    desc:'デートやスマートな誘導',           badge:'実戦',bc:'b3',g:'w',init:'モード3（誘い・クロージング）でトレーニング開始。最初のシナリオを出題してください。'},
+  {id:5,type:'man',   title:'男から声かけ',          desc:'初対面・ナンパ系の実戦練習',       badge:'実戦',bc:'b3',g:'m',init:'声かけモードでトレーニング開始。シチュエーションを設定してください。'},
+];
+
+let S={screen:'key',mode:null,msgs:[],loading:false,manTurns:0,pdirs:[],pexs:[],apiKey:''};
+
+// Try to load saved key
+const savedKey=sessionStorage.getItem('bond_api_key');
+if(savedKey){S.apiKey=savedKey;S.screen='home';}
+
+function parseDirs(t){return t.split('\n').map(l=>{const m=l.match(/^([A-C])｜([^：\n]+)(?:：(.*))?$/);return m?{letter:m[1],label:m[2].trim(),desc:(m[3]||'').trim()}:null}).filter(Boolean)}
+function parseExs(t){return t.split('\n').map(l=>{const m=l.match(/^([1-3])｜(.+)$/);return m?m[2].trim():null}).filter(Boolean)}
+function parseSc(t){const m=t.match(/【ボンド度：(\d+)点/);return m?parseInt(m[1]):null}
+function isWoman(t){return t.trim().startsWith('彩：')}
+function lastA(){const a=S.msgs.filter(m=>m.role==='assistant');return a.length?a[a.length-1].content:''}
+
+function fmt(text){
+  const sc=parseSc(text);
+  let t=text,badge='';
+  const PH='\x00S\x00';
+  if(sc!==null){
+    const cl=sc>=80?'shi':sc>=60?'smd':sc>=40?'slo':'sbd';
+    badge=`<span class="sbdg ${cl}">ボンド度 ${sc}点 / 100</span>`;
+    t=t.replace(/【ボンド度：\d+点[^】]*】/,PH);
+  }
+  // マークダウン記号を除去
+  t=t.replace(/^#{1,3}\s*/gm,'');
+  t=t.replace(/\*\*([^*]+)\*\*/g,'$1');
+  t=t.replace(/^---+$/gm,'');
+  // 連続空行を1行に
+  t=t.replace(/\n{3,}/g,'\n\n');
+  // エスケープ
+  t=t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  // 出題部分（📍💬）直前の余分な空行を詰める
+  t=t.replace(/\n\n(📍)/g,'\n$1').replace(/\n\n(💬)/g,'\n$1');
+  t=t.replace(/\n/g,'<br>');
+  if(sc!==null)t=t.replace(PH,badge);
+  return t;
+}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+async function apiCall(msgs,type){
+  const r=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key':S.apiKey,
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SP[type],messages:msgs})
+  });
+  const d=await r.json();
+  if(d.error)throw new Error(d.error.message||'API error');
+  if(!d.content?.[0])throw new Error('レスポンスが空です');
+  return d.content[0].text;
+}
+
+function setKey(){
+  const el=document.getElementById('keyinp');
+  const k=(el?.value||'').trim();
+  if(!k.startsWith('sk-ant-')){alert('APIキーは sk-ant- から始まる形式です');return;}
+  S.apiKey=k;
+  sessionStorage.setItem('bond_api_key',k);
+  S.screen='home';render();
+}
+
+function changeKey(){
+  sessionStorage.removeItem('bond_api_key');
+  S={screen:'key',mode:null,msgs:[],loading:false,manTurns:0,pdirs:[],pexs:[],apiKey:''};
+  render();
+}
+
+async function dispatch(content){
+  S.msgs=[...S.msgs,{role:'user',content}];
+  if(S.mode?.type==='man')S.manTurns++;
+  S.loading=true;render();
+  try{
+    const rep=await apiCall(S.msgs,S.mode.type);
+    S.msgs=[...S.msgs,{role:'assistant',content:rep}];
+    S.pdirs=parseDirs(rep);S.pexs=parseExs(rep);
+  }catch(e){
+    S.msgs=[...S.msgs,{role:'assistant',content:`エラー：${e.message}`}];
+    S.pdirs=[];S.pexs=[];
+  }
+  S.loading=false;render();
+}
+
+async function startMode(id){
+  const mode=MODES.find(m=>m.id===id);
+  S={screen:'training',mode,msgs:[],loading:true,manTurns:0,pdirs:[],pexs:[],apiKey:S.apiKey};
+  S.msgs=[{role:'user',content:mode.init}];render();
+  try{
+    const rep=await apiCall(S.msgs,mode.type);
+    S.msgs=[...S.msgs,{role:'assistant',content:rep}];
+    S.pdirs=parseDirs(rep);S.pexs=parseExs(rep);
+  }catch(e){
+    S.msgs=[...S.msgs,{role:'assistant',content:`エラー：${e.message}`}];
+  }
+  S.loading=false;render();
+}
+
+function pickDir(i){if(!S.pdirs[i]||S.loading)return;const d=S.pdirs[i];dispatch(`方向性${d.letter}（${d.label}）を選びます。`)}
+function pickEx(i){const e=S.pexs[i];if(!e)return;const el=document.getElementById('rta');if(el){el.value=e;el.focus()}}
+function sendReply(){const el=document.getElementById('rta');const t=el?.value?.trim();if(!t||S.loading)return;dispatch(t);if(el)el.value=''}
+function reqScore(){dispatch('採点してください。')}
+function sendHint(){dispatch('ヒントをください。どう切り返せばいいですか？');}
+function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendReply()}}
+function goHome(){S={screen:'home',mode:null,msgs:[],loading:false,manTurns:0,pdirs:[],pexs:[],apiKey:S.apiKey};render()}
+
+function render(){
+  const app=document.getElementById('app');
+  if(S.screen==='key')app.innerHTML=keyH();
+  else if(S.screen==='home')app.innerHTML=homeH();
+  else app.innerHTML=trainH();
+  if(S.screen==='training'){
+    document.getElementById('bot')?.scrollIntoView({behavior:'smooth'});
+    const rta=document.getElementById('rta');
+    if(rta&&!rta.disabled&&!S.loading)setTimeout(()=>rta.focus(),50);
+  }
+  if(S.screen==='key'){
+    const ki=document.getElementById('keyinp');
+    if(ki){ki.addEventListener('keydown',e=>{if(e.key==='Enter')setKey()});setTimeout(()=>ki.focus(),50);}
+  }
+}
+
+function keyH(){return`<div class="key-screen">
+<div class="key-ey">Classified — Training Protocol 007</div>
+<div class="key-h1">ボンド流 会話訓練</div>
+<div class="key-sub">
+  Anthropic APIキーを入力してください。<br>
+  キーは <a href="https://console.anthropic.com/" target="_blank">console.anthropic.com</a> で取得できます。<br>
+  入力したキーはこのブラウザのセッション内にのみ保存されます。
+</div>
+<input class="key-inp" id="keyinp" type="password" placeholder="sk-ant-api03-..." autocomplete="off">
+<div class="key-note">※ キーはこのページ外に送信されません。Anthropic API（api.anthropic.com）への通信にのみ使用されます。</div>
+<button class="key-btn" onclick="setKey()">訓練を開始する →</button>
+</div>`;}
+
+function homeH(){
+  const wm=MODES.filter(m=>m.g==='w'),mm=MODES.filter(m=>m.g==='m');
+  const card=m=>`<button class="mc" onclick="startMode(${m.id})"><span class="bdg ${m.bc}">${m.badge}</span><div class="mcb"><div class="mct">${m.title}</div><div class="mcd">${m.desc}</div></div><span class="arr">›</span></button>`;
+  return`<div class="home">
+<div class="ey">Classified — Training Protocol 007</div>
+<div class="h1">ボンド流 会話訓練 <button class="key-change" onclick="changeKey()" title="APIキーを変更">🔑</button></div>
+<div class="hsub">モードを選択してください、エージェント。<br><span style="font-size:12px;color:#aaa">— Q より</span></div>
+<div class="sl">女性から話しかけてくる</div>
+<div class="ml">${wm.map(card).join('')}</div>
+<div class="sl">男から話しかける</div>
+<div class="ml">${mm.map(card).join('')}</div>
+<div class="pbox"><strong>ボンドの5大原則：</strong><br>謝らない &nbsp;·&nbsp; 言い訳しない &nbsp;·&nbsp; 短く鋭く &nbsp;·&nbsp; 主導権を握る &nbsp;·&nbsp; リフレーミング</div>
+</div>`;}
+
+function trainH(){
+  const dm=S.msgs.slice(1);
+  const showD=S.mode?.type==='easy'&&!S.loading&&S.pdirs.length>0&&S.pexs.length===0;
+  const showE=S.mode?.type==='easy'&&!S.loading&&S.pexs.length>0;
+  const dis=S.loading||showD;
+  const showSc=S.mode?.type==='man'&&S.manTurns>=1&&!S.loading;
+  const showBar=showD||showE||showSc;
+  const msgsH=dm.map(m=>{
+    if(m.role==='user')return`<div class="mr u"><div class="bl me"><div style="white-space:pre-wrap">${esc(m.content)}</div></div></div>`;
+    const isW=S.mode?.type==='man'&&isWoman(m.content);
+    const bc=isW?'w':'q',fc=isW?'bf bfw':'bf',fl=isW?'彩':'Q';
+    const c=isW?m.content.replace(/^彩：\s*/,''):m.content;
+    return`<div class="mr"><div class="bl ${bc}"><div class="${fc}">${fl}</div><div>${fmt(c)}</div></div></div>`;
+  }).join('');
+  const barH=showBar?`<div class="abar">
+${showD?`<div class="albl">方向性を選んでください：</div><div class="dr">${S.pdirs.map((d,i)=>`<button class="dbtn" onclick="pickDir(${i})"><span class="dl">${d.letter}</span><span class="dt">${esc(d.label)}</span></button>`).join('')}</div>`:''}
+${showE?`<div class="albl">例文（クリックで入力欄へ）：</div><div class="er">${S.pexs.map((e,i)=>`<button class="ec" onclick="pickEx(${i})" title="${esc(e)}">${i+1}. ${esc(e.length>26?e.slice(0,24)+'…':e)}</button>`).join('')}</div>`:''}
+${showSc?`<div style="display:flex;justify-content:flex-end"><button class="scbtn" onclick="reqScore()">ここで採点してもらう →</button></div>`:''}
+</div>`:'';
+  return`<div class="train">
+<div class="th"><div class="thl"><span class="tht">${S.mode?.title||''}</span><span class="bdg ${S.mode?.bc||''}">${S.mode?.badge||''}</span></div><button class="bk" onclick="goHome()">← モード選択</button></div>
+<div class="msgs" id="msgs">
+${S.loading&&dm.length===0?'<div class="ld">Q が準備中…</div>':''}
+${msgsH}
+${S.loading&&dm.length>0?'<div class="ld">Q が処理中…</div>':''}
+<div id="bot"></div>
+</div>
+${barH}
+<div class="ir">
+<textarea class="rta" id="rta" rows="2" placeholder="${dis?'方向性を選んでください…':'あなたの切り返しを入力… (Enter で送信)'}" ${dis?'disabled':''} onkeydown="handleKey(event)"></textarea>
+${S.loading
+  ?`<span class="ld" style="align-self:flex-end;padding:8px 4px">…</span>`
+  :`<div style="display:flex;flex-direction:column;gap:5px;align-self:flex-end">
+    ${S.mode?.type!=='easy'?`<button class="hb" onclick="sendHint()" ${dis?'disabled':''}>ヒント</button>`:''}
+    <button class="sb" onclick="sendReply()" ${dis?'disabled':''}>送信</button>
+  </div>`}
+</div>
+</div>`;}
+
+render();
+</script>
+</body>
+</html>
