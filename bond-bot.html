@@ -126,7 +126,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku
 <body>
 <div class="wrap" id="app"></div>
 <script>
-const HARDCODED_KEY='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';
+const PROXY_URL='https://bond-bot.tk-suga3.workers.dev';
 const PASSWORD='vesper';
 
 const SP={
@@ -232,7 +232,7 @@ const MODES=[
 ];
 
 const unlocked=sessionStorage.getItem('bond_unlocked')==='1';
-let S={screen:unlocked?'home':'password',mode:null,msgs:[],loading:false,manTurns:0,pdirs:[],pexs:[],apiKey:HARDCODED_KEY};
+let S={screen:unlocked?'home':'password',mode:null,msgs:[],loading:false,manTurns:0,pdirs:[],pexs:[]};
 
 function parseDirs(t){return t.split('\n').map(l=>{const m=l.match(/^([A-C])｜([^：\n]+)(?:：(.*))?$/);return m?{letter:m[1],label:m[2].trim(),desc:(m[3]||'').trim()}:null}).filter(Boolean)}
 function parseExs(t){return t.split('\n').map(l=>{const m=l.match(/^([1-3])｜(.+)$/);return m?m[2].trim():null}).filter(Boolean)}
@@ -261,13 +261,10 @@ function fmt(text){
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 
 async function apiCall(msgs,type){
-  const r=await fetch('https://api.anthropic.com/v1/messages',{
+  const r=await fetch(PROXY_URL,{
     method:'POST',
     headers:{
       'Content-Type':'application/json',
-      'x-api-key':S.apiKey,
-      'anthropic-version':'2023-06-01',
-      'anthropic-dangerous-direct-browser-access':'true'
     },
     body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SP[type],messages:msgs})
   });
