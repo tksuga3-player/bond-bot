@@ -6,11 +6,11 @@
 <title>007 bond流 会話訓練</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;background:#f5f4f0;color:#1a1a18;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:1rem}
-.wrap{width:100%;max-width:640px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;background:#f5f4f0;color:#1a1a18;height:100vh;overflow:hidden;display:flex;align-items:flex-start;justify-content:center;padding:0.5rem}
+.wrap{width:100%;max-width:640px;height:100%;display:flex;flex-direction:column}
 
 /* PASSWORD SCREEN */
-.pw-screen{padding:2rem 1.5rem;background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;margin-top:2rem}
+.pw-screen{padding:2rem 1.5rem;background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;margin-top:2rem;flex:1}
 .pw-ey{font-size:10px;letter-spacing:.14em;color:#888;text-transform:uppercase;margin-bottom:8px}
 .pw-h1{font-size:20px;font-weight:500;margin-bottom:6px}
 .pw-sub{font-size:13px;color:#666;line-height:1.7;margin-bottom:1.25rem}
@@ -21,7 +21,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku
 .pw-btn:hover{background:#f0efeb}
 
 /* HOME */
-.home{padding:1.5rem 1rem 1rem;background:#fff;border-radius:12px;border:0.5px solid #d4d2c8}
+.home{padding:1.5rem 1rem 1rem;background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;overflow-y:auto;flex:1}
 .ey{font-size:10px;letter-spacing:.14em;color:#999;text-transform:uppercase;margin-bottom:6px}
 .h1{font-size:22px;font-weight:500;margin-bottom:4px}
 .hsub{font-size:14px;color:#666;line-height:1.7;margin-bottom:1.25rem}
@@ -42,13 +42,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku
 .pbox strong{font-weight:500;color:#333}
 
 /* TRAINING */
-.train{background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;display:flex;flex-direction:column;min-height:85vh}
+.train{background:#fff;border-radius:12px;border:0.5px solid #d4d2c8;display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
 .th{display:flex;align-items:center;justify-content:space-between;padding:10px 13px;border-bottom:0.5px solid #e8e6e0;flex-shrink:0}
 .thl{display:flex;align-items:center;gap:7px}
 .tht{font-size:13px;font-weight:500}
 .bk{font-size:12px;color:#888;background:none;border:none;cursor:pointer;padding:4px 6px}
 .bk:hover{color:#333}
-.msgs{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:11px;max-height:65vh}
+.msgs{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:11px;min-height:0}
 .mr{display:flex}
 .mr.u{justify-content:flex-end}
 .bl{max-width:90%;border-radius:10px;padding:9px 13px;font-size:14px;line-height:1.75}
@@ -191,6 +191,54 @@ C｜[方向性ラベル]：[一文の説明]
 
 最初のシナリオは採点なしで即座に出題してください（方向性ヒントは必ずつけること）。`,
 
+daily:`あなたは「ジェームズ・ボンド（007）流・会話トレーニング」の専属コーチ「Q」です（日常超入門モード）。
+日本語で話してください。
+
+このモードのコンセプト：
+- 職場の同僚、友達、初対面の人など、誰でも日常で遭遇するシーンを使う
+- 女性に限定しない。男性・上司・友人・店員など幅広く
+- 返しのハードルは低め。「普通よりちょっとうまい」を目標にする
+- ボンドほどクールじゃなくていい。「なんかいい感じの人」を目指す
+
+ボンド流の基本（簡易版）：
+・謝らない・言い訳しない
+・短く、自然に
+・自分のペースを崩さない
+
+シナリオ提示フォーマット（最初と採点後の次回に厳守）：
+📍 [シチュエーション一文：日常的で具体的な場面]
+💬 「[相手のセリフ：自然な日本語で短め]」
+
+【ヒント】
+A｜[方向性ラベル]：[一文の説明]
+B｜[方向性ラベル]：[一文の説明]
+C｜[方向性ラベル]：[一文の説明]
+
+シナリオの難易度ルール（厳守）：
+- 状況は誰でも経験したことがありそうな日常シーン（ランチの話、天気、仕事の雑談、友人からのツッコミ、コンビニ、エレベーター、飲み会など）
+- 相手のセリフは攻撃的でも高度でもなく、ごく普通の一言
+- 正解の敷居は低く設定する。気の利いた一言が言えれば十分
+
+方向性選択後のフォーマット：
+その方向性の例：
+1｜[例文（短め・自然な口語）]
+2｜[例文（別アプローチ）]
+3｜[例文（さらに別）]
+そのままでもアレンジしてもOKです。
+
+採点フォーマット：
+【ボンド度：XX点 / 100点】
+
+評価：[2文の優しい解説。まず良かった点を言う]
+
+もっとよくするなら：「[一言の改善例]」
+
+────────────────
+[次のシナリオをシナリオ提示フォーマット通りに出力]
+
+最初のシナリオは採点なしで即座に出題してください（ヒントは必ずつけること）。
+採点は厳しくせず、60点以上はポジティブな評価にする。`,
+
 man:`あなたは「ジェームズ・ボンド（007）流・声かけ訓練」の専属コーチ「Q」と女性役「彩（あや）」の両方を演じます。日本語で話してください。
 
 流れ：
@@ -224,6 +272,7 @@ man:`あなたは「ジェームズ・ボンド（007）流・声かけ訓練」
 };
 
 const MODES=[
+  {id:6,type:'daily', title:'日常会話モード',         desc:'同僚・友人・初対面。超入門の日常練習',badge:'超入門',bc:'b0',g:'d',init:'日常会話モード（超入門）でトレーニング開始。最初のシナリオを出題してください。'},
   {id:4,type:'easy',  title:'かんたんモード',       desc:'方向性ヒント＋例文サポート付き',   badge:'入門',bc:'b0',g:'w',init:'かんたんモード（入門）でトレーニング開始。最初のシナリオを出題してください。'},
   {id:1,type:'normal',title:'ランダム・スパーリング', desc:'日常会話・褒め言葉への切り返し',   badge:'基礎',bc:'b1',g:'w',init:'モード1（ランダム・スパーリング）でトレーニング開始。最初のシナリオを出題してください。'},
   {id:2,type:'normal',title:'制約付きスパーリング',  desc:'謝罪禁止・Yes/No禁止などの縛り',  badge:'応用',bc:'b2',g:'w',init:'モード2（制約付きスパーリング）でトレーニング開始。最初のシナリオを出題してください。'},
@@ -349,12 +398,14 @@ function passwordH(){return`<div class="pw-screen">
 </div>`;}
 
 function homeH(){
-  const wm=MODES.filter(m=>m.g==='w'),mm=MODES.filter(m=>m.g==='m');
+  const dm=MODES.filter(m=>m.g==='d'),wm=MODES.filter(m=>m.g==='w'),mm=MODES.filter(m=>m.g==='m');
   const card=m=>`<button class="mc" onclick="startMode(${m.id})"><span class="bdg ${m.bc}">${m.badge}</span><div class="mcb"><div class="mct">${m.title}</div><div class="mcd">${m.desc}</div></div><span class="arr">›</span></button>`;
   return`<div class="home">
 <div class="ey">Classified — Training Protocol 007</div>
 <div class="h1">ボンド流 会話訓練</div>
 <div class="hsub">モードを選択してください、エージェント。<br><span style="font-size:12px;color:#aaa">— Q より</span></div>
+<div class="sl">まずここから</div>
+<div class="ml">${dm.map(card).join('')}</div>
 <div class="sl">女性から話しかけてくる</div>
 <div class="ml">${wm.map(card).join('')}</div>
 <div class="sl">男から話しかける</div>
@@ -364,8 +415,9 @@ function homeH(){
 
 function trainH(){
   const dm=S.msgs.slice(1);
-  const showD=S.mode?.type==='easy'&&!S.loading&&S.pdirs.length>0&&S.pexs.length===0;
-  const showE=S.mode?.type==='easy'&&!S.loading&&S.pexs.length>0;
+  const isEasyLike=S.mode?.type==='easy'||S.mode?.type==='daily';
+  const showD=isEasyLike&&!S.loading&&S.pdirs.length>0&&S.pexs.length===0;
+  const showE=isEasyLike&&!S.loading&&S.pexs.length>0;
   const dis=S.loading||showD;
   const showSc=S.mode?.type==='man'&&S.manTurns>=1&&!S.loading;
   const showBar=showD||showE||showSc;
@@ -395,7 +447,7 @@ ${barH}
 ${S.loading
   ?`<span class="ld" style="align-self:flex-end;padding:8px 4px">…</span>`
   :`<div style="display:flex;flex-direction:column;gap:5px;align-self:flex-end">
-    ${S.mode?.type!=='easy'?`<button class="hb" onclick="sendHint()" ${dis?'disabled':''}>ヒント</button>`:''}
+    ${(S.mode?.type!=='easy'&&S.mode?.type!=='daily')?`<button class="hb" onclick="sendHint()" ${dis?'disabled':''}>ヒント</button>`:''}
     <button class="sb" onclick="sendReply()" ${dis?'disabled':''}>送信</button>
   </div>`}
 </div>
